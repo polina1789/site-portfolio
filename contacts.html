@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мої контакти</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f3d3e;
+      color: #e0f2e9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Меню */
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #145c58;
+      color: #e0f2e9;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 1000;
+    }
+
+    .menu {
+      position: fixed;
+      top: 60px;
+      left: 20px;
+      background-color: #1e6e68;
+      border-radius: 10px;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      z-index: 999;
+    }
+
+    .menu a {
+      color: #e0f2e9;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #145c58;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 40px;
+    }
+
+    .contact-container {
+      background-color: #145c58;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .contact-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-item span {
+      font-weight: bold;
+    }
+
+    .contact-item a {
+      color: #b0ffe3;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .contact-container {
+        padding: 25px 20px;
+      }
+
+      .menu-toggle {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+
+      .menu a {
+        padding: 10px 15px;
+        font-size: 15px;
+      }
+
+      .contact-container h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">Меню</button>
+
+  <div class="menu" id="menu">
+    <a href="index.html">Головна</a>
+    <a href="register.html">Реєстрація</a>
+    <a href="contacts.html">Мої контакти</a>
+    <a href="gallery.html">Мої послуги</a>
+  </div>
+
+  <div class="main">
+    <div class="contact-container">
+      <h1>Мої контакти</h1>
+      <div class="contact-item">
+        <span>Телефон:</span> <a href="tel:+380996007328">0996007328</a>
+      </div>
+      <div class="contact-item">
+        <span>Telegram:</span> <a href="https://t.me/polina_varf" target="_blank">@polina_varf</a>
+      </div>
+      <div class="contact-item">
+        <span>Instagram:</span> <a href="https://www.instagram.com/_polina_varfolomeyeva?igsh=ZjJmMWM1aDhzM3F3" target="_blank">_polina_varfolomeyeva</a>
+      </div>
+      <div class="contact-item">
+        <span>TikTok:</span> <a href="https://www.tiktok.com/@user6223768018139" target="_blank">@user6223768018139</a>
+      </div>
+      <div class="contact-item">
+        <span>Email:</span> <a href="mailto:polina2021varf@gmail.com">polina2021varf@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>

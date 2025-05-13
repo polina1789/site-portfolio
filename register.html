@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Реєстрація</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f3d3e;
+      color: #e0f2e9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #145c58;
+      color: #e0f2e9;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 1000;
+    }
+
+    .menu {
+      position: fixed;
+      top: 60px;
+      left: 20px;
+      background-color: #1e6e68;
+      border-radius: 10px;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      z-index: 999;
+    }
+
+    .menu a {
+      color: #e0f2e9;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #145c58;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 40px;
+    }
+
+    .form-container {
+      background-color: #145c58;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .form-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #e0f2e9;
+      color: #0f3d3e;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      background-color: #1e6e68;
+      color: #e0f2e9;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #145c58;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px 20px;
+      }
+
+      .menu-toggle {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+
+      .menu a {
+        padding: 10px 15px;
+        font-size: 15px;
+      }
+
+      .form-container h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">Меню</button>
+
+  <div class="menu" id="menu">
+    <a href="index.html">Головна</a>
+    <a href="register.html">Реєстрація</a>
+    <a href="contacts.html">Мої контакти</a>
+    <a href="gallery.html">Мої послуги</a>
+  </div>
+
+  <div class="main">
+    <div class="form-container">
+      <h1>Реєстрація</h1>
+      <form onsubmit="return handleRegister(event)">
+        <div class="form-group">
+          <label for="name">Ім’я</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="fullname">ПІБ</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Електронна пошта</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Номер телефону</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <button type="submit" class="submit-btn">Зареєструватися</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+      menu.style.flexDirection = "column"; // обов’язково для мобільного вигляду
+    }
+
+    function handleRegister(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      alert("Дякуємо за реєстрацію, " + name + "!");
+    }
+  </script>
+
+</body>
+</html>

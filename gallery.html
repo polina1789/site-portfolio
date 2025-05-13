@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Галерея</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f3d3e;
+      color: #e0f2e9;
+      min-height: 100vh;
+      padding: 80px 20px 40px;
+    }
+
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #145c58;
+      color: #e0f2e9;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 1000;
+    }
+
+    .menu {
+      position: fixed;
+      top: 60px;
+      left: 20px;
+      background-color: #1e6e68;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      z-index: 999;
+    }
+
+    .menu a {
+      color: #e0f2e9;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #145c58;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      background-color: #145c58;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .gallery-item p {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .menu-toggle {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+
+      .menu a {
+        padding: 10px 15px;
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">Меню</button>
+
+  <div class="menu" id="menu">
+    <a href="#">Головна</a>
+    <a href="#">Реєстрація</a>
+    <a href="#">Мої контакти</a>
+    <a href="#">Мої послуги</a>
+  </div>
+
+  
+  <h1>Моя галерея</h1>
+
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="foto hobi 2.jpg" alt="Фото 2">
+    </div>
+    <div class="gallery-item">
+      <img src="foto hobi 3.jpg" alt="Фото 3">
+    </div>
+    <div class="gallery-item">
+      <img src="foto hobi 4.jpg" alt="Фото 4">
+    </div>
+    <div class="gallery-item">
+      <img src="foto hobi 5.jpg" alt="Фото 5">
+    </div>
+    <div class="gallery-item">
+      <img src="foto hobi 6.jpg" alt="Фото 6">
+    </div>
+    <div class="gallery-item">
+      <img src="foto hobi 7.jpg" alt="Фото 7">
+    </div>
+    <div class="gallery-item">
+      <img src="foto hobi 8.jpg" alt="Фото 8">
+    </div>
+    <div class="gallery-item">
+      <img src="foto hobi 9.jpg" alt="Фото 9">
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>
